@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>phat.fixlag</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{background:#111;color:#fff;font-family:sans-serif;text-align:center;padding-top:50px}
+.btn{background:#00c846;color:#fff;border:none;padding:15px 30px;font-size:20px;border-radius:10px;cursor:pointer}
+.key{margin-top:20px;font-size:24px;color:#ff0;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>phat.fixlag</h1>
+<button class="btn" onclick="laykey()">Lấy key 24h</button>
+<div class="key" id="k"></div>
+<script>
+function laykey(){
+  let d = new Date();
+  let key = "phat."+d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear();
+  document.getElementById("k").innerText = key;
+  navigator.clipboard.writeText(key);
+  alert("Đã copy: "+key);
+}
+</script>
+</body>
+</html>
